@@ -80,7 +80,7 @@ func WithRegistryMirror(host string, endpoints ...string) GenOption {
 }
 
 // WithRegistryCaCert specifies the certificate of the certificate authority which signed certificate of the registry
-func WithRegistryCaCert(cacert string) GenOption {
+func WithRegistryCaCert(host, cacert string) GenOption {
 	return func(o *GenOptions) error {
 		if o.RegistryConfig == nil {
 			o.RegistryConfig = make(map[string]*v1alpha1.RegistryConfig)
